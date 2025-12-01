@@ -1,0 +1,11 @@
+Model Information:
+* title:	Arbol Low Poly (Mi Primer Blender)
+* source:	https://sketchfab.com/3d-models/arbol-low-poly-mi-primer-blender-462eff5fdc1145cfaf565b3aae1a8dad
+* author:	AngeloB (https://sketchfab.com/AngeloB)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Arbol Low Poly (Mi Primer Blender)" (https://sketchfab.com/3d-models/arbol-low-poly-mi-primer-blender-462eff5fdc1145cfaf565b3aae1a8dad) by AngeloB (https://sketchfab.com/AngeloB) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

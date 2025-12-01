@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lampara
+* source:	https://sketchfab.com/3d-models/lampara-20fa6c63508141a98c281aa94640e134
+* author:	Jonathan (https://sketchfab.com/JonyDev124)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lampara" (https://sketchfab.com/3d-models/lampara-20fa6c63508141a98c281aa94640e134) by Jonathan (https://sketchfab.com/JonyDev124) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

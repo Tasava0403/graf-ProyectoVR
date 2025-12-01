@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Money Run VR • Recolecta y Gana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- Favicon y meta tags para redes sociales -->
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.ico">
+    <meta name="description" content="Juego VR inmersivo donde recolectas dinero en un mundo abierto lleno de desafíos">
+    <meta name="keywords" content="VR, juego, dinero, three.js, webxr, realidad virtual">
+    
+    <!-- Open Graph para compartir en redes -->
+    <meta property="og:title" content="Money Run VR • Recolecta y Gana">
+    <meta property="og:description" content="Sumérgete en esta experiencia VR y recolecta todo el dinero que puedas">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/logo/og-image.jpg">
+
+    <!-- Importmap: Three.js + Addons (ESM) -->
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.1/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.1/examples/jsm/"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen">
+      <div class="loading-content">
+        <div class="logo-container">
+          <div class="logo-icon">💰</div>
+          <h1 class="logo-text">Money Run VR</h1>
+        </div>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+        <p class="loading-text">Cargando experiencia VR...</p>
+        <div class="loading-tips">
+          <p>💡 <strong>Consejo:</strong>Explora el mundo y recoge billetes</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header con Logo y Controles -->
+    <header id="gameHeader">
+      <div class="header-content">
+        <div class="logo-header">
+          <span class="logo-emoji">💰</span>
+          <h1>Money Run VR</h1>
+        </div>
+        <div class="controls-info">
+          <button id="controlsToggle" class="info-btn">ℹ️ Controles</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Panel de Controles -->
+    <div id="controlsPanel" class="controls-panel hidden">
+      <div class="panel-content">
+        <h3>🎮 Controles del Juego</h3>
+        
+        <div class="controls-section">
+          <h4>🖥️ Modo Escritorio</h4>
+          <div class="control-item">
+            <span class="key">"W A S D" y "Flechas"</span>
+            <span class="action">Movimiento</span>
+          </div>
+          <div class="control-item">
+            <span class="key">Click</span>
+            <span class="action">Bloquear Mouse</span>
+          </div>
+          <div class="control-item">
+            <span class="key">ESC</span>
+            <span class="action">Liberar Mouse</span>
+          </div>
+        </div>
+
+        <div class="controls-section">
+          <h4>🥽 Modo VR (Meta Quest)</h4>
+          <div class="control-item">
+            <span class="key">Stick Izq/Der</span>
+            <span class="action">Movimiento Libre</span>
+          </div>
+          <div class="control-item">
+            <span class="key">Gatillo Der</span>
+            <span class="action">Teleport</span>
+          </div>
+          <div class="control-item">
+            <span class="key">Mov. Cabeza</span>
+            <span class="action">Mirar alrededor</span>
+          </div>
+        </div>
+
+        <div class="controls-section">
+          <h4>🎯 Objetivo</h4>
+          <p>Recolecta <strong>$50,000</strong> en sacos de dinero 💰 dispersos por el mapa</p>
+          <p>Cada saco contiene entre $500 y $1,500</p>
+          <p><strong>¡Bonus!</strong> 5% de chance de sacos de $5,000</p>
+          <p>Evita los carros obstáculo 🚗 y explora el mundo abierto</p>
+        </div>
+
+        <div class="team-info">
+          <h4>👥 Integrantes del Equipo</h4>
+          <div class="team-member">
+            <span class="member-name">Ramon Alberto Rivera Alameda</span>
+            <span class="member-id">22200763</span>
+          </div>
+          <div class="team-member">
+            <span class="member-name">Salas Nava Octavio</span>
+            <span class="member-id">22200766</span>
+          </div>
+          <div class="team-member">
+            <span class="member-name">Leonardo Miguel Celis García</span>
+            <span class="member-id">23200818</span>
+          </div>
+        </div>
+
+        <button id="closeControls" class="close-btn">Cerrar</button>
+      </div>
+    </div>
+
+    <!-- UI: HUD Mejorado -->
+    <div id="hud">
+      <div class="hud-container">
+        <div class="hud-card">
+          <div class="hud-icon">🎯</div>
+          <div class="hud-content">
+            <span class="hud-label">Meta de Dinero</span>
+            <b id="totalPumpkins" class="hud-value">$50,000</b>
+          </div>
+        </div>
+        
+        <div class="hud-card">
+          <div class="hud-icon">💰</div>
+          <div class="hud-content">
+            <span class="hud-label">Dinero Recolectado</span>
+            <b id="hitPumpkins" class="hud-value">$0</b>
+          </div>
+        </div>
+
+        <div class="hud-card progress-card">
+          <div class="hud-icon">📊</div>
+          <div class="hud-content">
+            <span class="hud-label">Progreso</span>
+            <div class="progress-bar">
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <span id="progressText" class="progress-text">0%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notificaciones -->
+    <div id="notifications" class="notifications"></div>
+
+    <!-- Audio ambiente (se inicia al entrar a VR) -->
+    <audio id="ambient" src="assets/audio/TheVillage.mp3" preload="auto" loop></audio>
+
+    <canvas id="scene"></canvas>
+    
+    <!-- Footer -->
+    <footer id="gameFooter">
+      <div class="footer-content">
+        <p>© 2025 Money Run VR • Experiencia WebXR con Three.js</p>
+        <div class="tech-badges">
+          <span class="tech-badge">Three.js</span>
+          <span class="tech-badge">WebXR</span>
+          <span class="tech-badge">VR</span>
+          <span class="tech-badge">Meta Quest 3</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Crosshair para modo escritorio -->
+    <div id="crosshair" class="crosshair"></div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

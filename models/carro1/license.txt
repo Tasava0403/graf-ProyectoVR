@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cabana do Terror
+* source:	https://sketchfab.com/3d-models/cabana-do-terror-f19ece2b5c85455c954aa8a57db6e549
+* author:	Freeality (https://sketchfab.com/Freeality)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cabana do Terror" (https://sketchfab.com/3d-models/cabana-do-terror-f19ece2b5c85455c954aa8a57db6e549) by Freeality (https://sketchfab.com/Freeality) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
