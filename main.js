@@ -190,7 +190,7 @@ const WORLD_CONFIG = {
 
 /** Configuración de objetos y entidades del juego */
 const OBJECT_CONFIG = {
-    OBJECT_COUNT: 100,
+    OBJECT_COUNT: 90,
     BAG_COUNT: 25,
     OBSTACLE_COUNT: 12,
     
