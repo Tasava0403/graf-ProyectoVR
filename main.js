@@ -179,12 +179,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /** Configuración principal del mundo virtual */
 const WORLD_CONFIG = {
-    SIZE: 130,
+    SIZE: 150,
     TERRAIN_RESOLUTION: 256,
     TERRAIN_MAX_HEIGHT: 0.8,
-    RADIUS: 130 * 0.5 - 1.0,
+    RADIUS: 150 * 0.5 - 1.0,
     FOG_DENSITY: 0.008,
-    BAG_AREA: 40,
+    BAG_AREA: 50,
     WALL_HEIGHT: 6
 };
 
